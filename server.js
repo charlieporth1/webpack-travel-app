@@ -9,7 +9,6 @@ const cors = require("cors");
 
 const axios = require('axios');
 const moment = require('moment')();
-const webserver = require("./webserver");
 const app = express();
 
 const port = process.env.BACKEND_PORT || 3000;
@@ -100,5 +99,4 @@ app.post("/get-current-weather-data", async (req, res) => {
 
 app.listen(port);
 console.log("Server started on port " + port);
-webserver.startWebServer();
 
