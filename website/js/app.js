@@ -26,7 +26,7 @@ async function getData(zipcode) {
     const data = {
         zipcode: zipcode.toString()
     };
-    return await fetch('/get-current-weather-data', {
+    return await fetch('http://localhost:3000/get-current-weather-data', {
         method: 'post',
         body: JSON.stringify(data),
         headers: {
