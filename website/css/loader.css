@@ -1,4 +1,3 @@
-@import "ui-element-defaults.css";
 .loader {
     border: 16px solid #c3c3c3; /* Light grey */
     border-top: 16px solid var(--primary-light); /* Blue */
