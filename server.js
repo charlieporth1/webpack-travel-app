@@ -17,13 +17,17 @@ const weatherBaseUrl = process.env.WEATHER_BASE_URL || '';
 // Require Express to run server and routes
 
 // Start up an instance of app
+const corsOptions = {
+    origin: weatherBaseUrl,
+    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+};
 
 /* Middleware*/
 //Here we are configuring express to use body-parser as middle-ware.
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(helmet());
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(compression());
 
 // Cors for cross origin allowance
@@ -54,7 +58,7 @@ function ProjectData() {
 }
 
 function generateWeatherURL(q) {
-    return `${weatherBaseUrl}/weather?${q}&appid=${apiKey}`
+    return `${weatherBaseUrl}/data/2.5/weather?${q}&appid=${apiKey}`
 }
 
 async function getData(url) {
