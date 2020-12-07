@@ -8,7 +8,7 @@ this.newDate = dd.getMonth() + '.' + dd.getDate() + '.' + dd.getFullYear();
 
 
 (function () {
-    const button = document.body.querySelector('#generate');
+    const button = document.body.querySelector('#generate');reretu
     button.addEventListener("click", async function callback() {
         await onSubmit();
     })
