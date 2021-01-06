@@ -1,0 +1,53 @@
+/*This should never be imported direclty to the client html only to the styles files*/
+@import "../styles/defaults/variables";
+@import "../styles/defaults/mixin";
+
+$font-dir: '../fonts';
+$default-font: 'Roboto';
+// adding specific types of font-weights
+@include f-face('#{$font-dir}/#{$default-font}/', $default-font, '-Thin', 100);
+@include f-face('#{$font-dir}/#{$default-font}/', $default-font, '-Light', 300);
+@include f-face('#{$font-dir}/#{$default-font}/', $default-font, '-Regular', 400);
+@include f-face('#{$font-dir}/#{$default-font}/', $default-font, '', 400);
+@include f-face('#{$font-dir}/#{$default-font}/', $default-font, '-Medium', 500);
+@include f-face('#{$font-dir}/#{$default-font}/', $default-font, '-Bold', 700);
+// ========================================================usa
+font {
+  font-family: Roboto-Regular, sans-serif;
+  /*Color 8*/
+  color: $text-primary;
+}
+
+basefont {
+  font-family: Roboto-Regular, sans-serif;
+  /*Color*/
+  color: $text-primary;
+}
+
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+textarea,
+text,
+span,
+figcaption,
+button,
+caption,
+input,
+label,
+select,
+html,
+p {
+  font-family: Roboto-Regular, sans-serif;
+  color: $text-primary;
+}
+
+a {
+  font-family: Roboto-Regular, sans-serif;
+}

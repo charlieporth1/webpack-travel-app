@@ -1,5 +1,5 @@
 let dtRunning = false;
-(function displayDT() {
+function displayDt() {
     // const moment = moment();
     if (!dtRunning) {
         dtRunning = true; // to prevent buffer overflows and overloading the system
@@ -11,7 +11,10 @@ let dtRunning = false;
         }
         setTimeout(() => {
             dtRunning = false;
-            displayDT();
+            displayDt();
         }, 1000);
     }
-}());
+
+}
+
+export {displayDt}

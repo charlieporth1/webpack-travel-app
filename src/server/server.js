@@ -1,14 +1,14 @@
 // Setup empty JS object to act as endpoint for all routes
-require("dotenv").config();
+require("dotenv/types").config();
 const performance = require('perf_hooks').performance;
 const express = require('express');
 const bodyParser = require('body-parser');
-const helmet = require('helmet');
+const helmet = require('helmet/dist/index');
 const compression = require('compression');
 const cors = require("cors");
 
-const axios = require('axios');
-const moment = require('moment')();
+const axios = require('axios/index');
+const moment = require('moment/moment')();
 const app = express();
 
 const port = process.env.BACKEND_PORT || 3000;
@@ -33,7 +33,7 @@ app.use(compression());
 // Cors for cross origin allowance
 
 // Initialize the main progject folder
-app.use(express.static('website'));
+app.use(express.static('client'));
 
 app.disable('x-powered-by');
 

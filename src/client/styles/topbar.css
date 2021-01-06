@@ -1,0 +1,111 @@
+/*This should never be imported direclty to the client html only to the styles files*/
+@font-face {
+  font-family: "Roboto-Thin";
+  src: url("../fonts/Roboto/Roboto-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto-Light";
+  src: url("../fonts/Roboto/Roboto-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto-Regular";
+  src: url("../fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto-Medium";
+  src: url("../fonts/Roboto/Roboto-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto-Bold";
+  src: url("../fonts/Roboto/Roboto-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+font {
+  font-family: Roboto-Regular, sans-serif;
+  /*Color 8*/
+  color: #000;
+}
+
+basefont {
+  font-family: Roboto-Regular, sans-serif;
+  /*Color*/
+  color: #000;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+textarea,
+text,
+span,
+figcaption,
+button,
+caption,
+input,
+label,
+select,
+html,
+p {
+  font-family: Roboto-Regular, sans-serif;
+  color: #000;
+}
+
+a {
+  font-family: Roboto-Regular, sans-serif;
+}
+
+.top-bar-top {
+  background-color: #006acb;
+  height: 20px;
+  padding-top: 10px;
+  min-width: 100vw;
+  box-shadow: 2px 4px 100px #444;
+}
+
+.top-bar-second {
+  background-color: #4797ff;
+  /*background-color: #85c7ff;*/
+  height: 60px;
+  min-width: 100vw;
+  box-shadow: 2px 4px 25px #444;
+  opacity: 0.999;
+}
+
+.headline {
+  font-size: 30px;
+  justify-self: center;
+  align-self: center;
+  text-align: center;
+  font-family: Roboto, sans-serif;
+}
+
+#top-bar-date-time {
+  font-family: Roboto, sans-serif;
+  text-align: right;
+  padding-right: 10px;
+  color: #fff;
+  z-index: 99;
+  font-size: 12px;
+  margin-top: -2px;
+}
+
+/*# sourceMappingURL=topbar.css.map */

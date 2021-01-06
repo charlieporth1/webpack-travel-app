@@ -1,0 +1,114 @@
+/*This should never be imported direclty to the client html only to the styles files*/
+@font-face {
+  font-family: "Roboto-Thin";
+  src: url("../fonts/Roboto/Roboto-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto-Light";
+  src: url("../fonts/Roboto/Roboto-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto-Regular";
+  src: url("../fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto-Medium";
+  src: url("../fonts/Roboto/Roboto-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto-Bold";
+  src: url("../fonts/Roboto/Roboto-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+font {
+  font-family: Roboto-Regular, sans-serif;
+  /*Color 8*/
+  color: #000;
+}
+
+basefont {
+  font-family: Roboto-Regular, sans-serif;
+  /*Color*/
+  color: #000;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+textarea,
+text,
+span,
+figcaption,
+button,
+caption,
+input,
+label,
+select,
+html,
+p {
+  font-family: Roboto-Regular, sans-serif;
+  color: #000;
+}
+
+a {
+  font-family: Roboto-Regular, sans-serif;
+}
+
+.m-design {
+  box-shadow: 2px 4px 7px #444;
+}
+
+.holder {
+  margin-top: 10px;
+  padding: 5px;
+}
+
+.default-element-spacing {
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.entry {
+  background: rgba(59, 74, 107, 0.4);
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: white;
+  height: 100%;
+  width: 100%;
+  background: whitesmoke;
+  font-family: Roboto, sans-serif;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+  font-family: Roboto, sans-serif;
+}
+
+/*# sourceMappingURL=main.css.map */

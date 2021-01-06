@@ -2,17 +2,15 @@
 
 // Create a new date instance dynamically with JS
 
-this.dd = new Date();
-this.newDate = dd.getMonth() + '.' + dd.getDate() + '.' + dd.getFullYear();
 
+import {toggleLoader} from "./toggle_loading";
 
-
-(function () {
-    const button = document.body.querySelector('#generate');reretu
+function createWeatherClick() {
+    const button = document.body.querySelector('#generate');
     button.addEventListener("click", async function callback() {
         await onSubmit();
     })
-}());
+}
 
 async function onSubmit() {
     const zipcode = getInputValue("zip");
@@ -32,7 +30,7 @@ async function getData(zipcode) {
         headers: {
             'Content-Type': 'application/json'
         }
-    }).then( (response)=> {
+    }).then((response) => {
         // The API call was successful!
         if (response.ok && response.status === 200) {
             console.log(response);
@@ -40,14 +38,14 @@ async function getData(zipcode) {
         } else {
             return Promise.reject(response);
         }
-    }).catch( (err)=>{
+    }).catch((err) => {
         // There was an error
         console.warn('Something went wrong.', err);
         return Promise.reject(err);
     });
 }
 
-function modifyDom(data)  {
+function modifyDom(data) {
     const dateDiv = document.getElementById("date");
     const tempDiv = document.getElementById("temp");
     const contentDiv = document.getElementById("content");
@@ -60,6 +58,7 @@ function modifyDom(data)  {
     toggleLoader();
 
 }
+
 function kelvinToF(tempInKelvin) {
     // Prompting the user to enter today's Kelvin temperature
     const kelvin = tempInKelvin;
@@ -68,9 +67,18 @@ function kelvinToF(tempInKelvin) {
     const celsius = kelvin - 273;
 
 // Calculating Fahrenheit temperature to the nearest integer
-    let fahrenheit = Math.floor(celsius * (9/5) + 32);
+    let fahrenheit = Math.floor(celsius * (9 / 5) + 32);
     return fahrenheit;
 }
+
 function getInputValue(inputId) {
     return String(window.document.getElementById(inputId.toString().trim()).value).trim();
 }
+
+window.modifyDom = modifyDom;
+window.kelvinToF = kelvinToF;
+window.getInputValue = getInputValue;
+window.getData = getData;
+window.onSubmit = onSubmit;
+
+export {createWeatherClick}

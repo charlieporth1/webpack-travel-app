@@ -1,0 +1,21 @@
+@import '../fonts/font';
+@import "defaults/variables";
+@import "defaults/ui-element";
+body,
+html {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: white;
+  height: 100%;
+  width: 100%;
+  background: $background-light;
+  font-family: Roboto, sans-serif;
+}
+#root {
+  height: 100%;
+  width: 100%;
+  font-family: Roboto, sans-serif;
+}

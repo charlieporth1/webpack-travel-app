@@ -15,3 +15,4 @@ function toggleLoader() {
         button.style.backgroundColor = '#006acb';
     }
 }
+export {toggleLoader}

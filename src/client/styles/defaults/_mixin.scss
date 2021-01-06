@@ -1,0 +1,52 @@
+@mixin img-overflow-protection {
+  align-self: center;
+  justify-content: center;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-position: center;
+}
+
+@mixin business-image($width: 300px) {
+  overflow: hidden;
+  width: $width;
+  height: $width / 1.6; //8x5 ratio
+  img {
+    @include img-overflow-protection;
+    display: inline-flex;
+  }
+}
+
+@mixin center-root {
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  align-self: center;
+}
+
+@mixin center-items {
+  @include center-root;
+  align-items: center;
+}
+
+@mixin center-text {
+  align-content: stretch;
+  justify-content: center;
+  text-align: center;
+}
+
+@mixin f-face($path, $family, $type: '', $weight: 400, $style: normal) {
+  @font-face {
+    @if ($type == '') {
+      font-family: '#{$family}';
+      src: url('#{$path}#{$family}-Regular.ttf') format('truetype');
+      font-weight: $weight;
+      font-style: $style;
+    } @else {
+      font-family: '#{$family}#{$type}';
+      src: url('#{$path}#{$family}#{$type}.ttf') format('truetype');
+      font-weight: $weight;
+      font-style: $style;
+    }
+  }
+}

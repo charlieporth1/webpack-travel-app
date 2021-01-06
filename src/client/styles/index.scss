@@ -1,19 +1,15 @@
-@import "font-default.css";
-@import "topbar.css";
-@import "ui-element-defaults.css";
-body {
-    background: var(--background-light);
-    font-family: Roboto, sans-serif;
-}
+@import "../fonts/font";
+@import "defaults/ui-element";
+@import 'defaults/variables';
 
 #app {
     display: grid;
     grid-auto-rows: minmax(150px, auto);
     grid-template-columns: auto;
     height: 110vh;
-    background: var(--background-light);;
+    background: $background-light;;
     /*Light*/
-    color: var(--primary-light);
+    color: $primary-light;
     justify-content: center;
     grid-gap: 1em;
     font-size: 20px;
@@ -26,7 +22,7 @@ body {
 
 #date {
     font-size: 16px;
-    color: var(--text-primary);
+    color: $text-primary;
 
 }
 
@@ -37,18 +33,18 @@ body {
 
 #temp {
     font-size: 16px;
-    color: var(--text-primary);
+    color: $text-primary;
 }
 
 #content {
     font-size: 16px;
-    color: var(--text-primary);
+    color: $text-primary;
 
 }
 
 
 .title {
-    color: var(--text-primary);
+    color: $text-primary;
 }
 
 /*  Basic Styling To Override Default For Basic HTML Elements */
@@ -56,7 +52,7 @@ label {
     display: block;
     font-size: 27px;
     margin-bottom: 5px;
-    color: var(--text-primary);
+    color: $text-primary;
 }
 
 input {
@@ -65,8 +61,8 @@ input {
     width: 320px;
     /*Primary*/
     /*background: #4797ff;*/
-    background: var(--element-background-light);
-    color: var(--text-primary);
+    background: $element-background-light;
+    color:$text-primary;
     font-size: 20px;
     font-family: Roboto, sans-serif;
     border: none;
@@ -76,8 +72,8 @@ button {
     width: 400px;
     height: 100px;
     /*Dark*/
-    background: var(--button-primary);
-    color: var(--button-text-primary);
+    background:$button-primary;
+    color: $button-text-primary;
     font-size: 26px;
     font-family: Roboto, sans-serif;
     border: none;
@@ -88,8 +84,8 @@ h1 {
     font-size: 36px;
 }
 textarea {
-    background: var(--element-background-light);
-    color: var(--text-primary);
+    background: $element-background-light;
+    color: $text-primary;
     font-size: 20px;
     font-family: Roboto, sans-serif;
     border-radius: 5px;

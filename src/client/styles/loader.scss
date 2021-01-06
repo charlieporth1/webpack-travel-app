@@ -1,6 +1,7 @@
+@import 'defaults/variables';
 .loader {
     border: 16px solid #c3c3c3; /* Light grey */
-    border-top: 16px solid var(--primary-light); /* Blue */
+    border-top: 16px solid $primary-light; /* Blue */
     border-radius: 50%;
     width: 120px;
     height: 120px;

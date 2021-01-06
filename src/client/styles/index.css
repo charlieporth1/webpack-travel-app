@@ -1,0 +1,205 @@
+/*This should never be imported direclty to the client html only to the styles files*/
+@font-face {
+  font-family: "Roboto-Thin";
+  src: url("../fonts/Roboto/Roboto-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto-Light";
+  src: url("../fonts/Roboto/Roboto-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto-Regular";
+  src: url("../fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto-Medium";
+  src: url("../fonts/Roboto/Roboto-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto-Bold";
+  src: url("../fonts/Roboto/Roboto-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+font {
+  font-family: Roboto-Regular, sans-serif;
+  /*Color 8*/
+  color: #000;
+}
+
+basefont {
+  font-family: Roboto-Regular, sans-serif;
+  /*Color*/
+  color: #000;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+textarea,
+text,
+span,
+figcaption,
+button,
+caption,
+input,
+label,
+select,
+html,
+p {
+  font-family: Roboto-Regular, sans-serif;
+  color: #000;
+}
+
+a {
+  font-family: Roboto-Regular, sans-serif;
+}
+
+.m-design {
+  box-shadow: 2px 4px 7px #444;
+}
+
+.holder {
+  margin-top: 10px;
+  padding: 5px;
+}
+
+.default-element-spacing {
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.entry {
+  background: rgba(59, 74, 107, 0.4);
+}
+
+#app {
+  display: grid;
+  grid-auto-rows: minmax(150px, auto);
+  grid-template-columns: auto;
+  height: 110vh;
+  background: whitesmoke;
+  /*Light*/
+  color: #85c7ff;
+  justify-content: center;
+  grid-gap: 1em;
+  font-size: 20px;
+  font-family: Roboto, sans-serif;
+}
+
+#date {
+  font-size: 16px;
+  color: #000;
+}
+
+.root-styles-for-elements {
+  border-radius: 5px;
+  padding: 7px;
+}
+
+#temp {
+  font-size: 16px;
+  color: #000;
+}
+
+#content {
+  font-size: 16px;
+  color: #000;
+}
+
+.title {
+  color: #000;
+}
+
+/*  Basic Styling To Override Default For Basic HTML Elements */
+label {
+  display: block;
+  font-size: 27px;
+  margin-bottom: 5px;
+  color: #000;
+}
+
+input {
+  display: block;
+  height: 60px;
+  width: 320px;
+  /*Primary*/
+  /*background: #4797ff;*/
+  background: #f0f0f0;
+  color: #000;
+  font-size: 20px;
+  font-family: Roboto, sans-serif;
+  border: none;
+}
+
+button {
+  width: 400px;
+  height: 100px;
+  /*Dark*/
+  background: #006acb;
+  color: #fff;
+  font-size: 26px;
+  font-family: Roboto, sans-serif;
+  border: none;
+  box-shadow: 2px 4px 7px #f0f0f0;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+textarea {
+  background: #f0f0f0;
+  color: #000;
+  font-size: 20px;
+  font-family: Roboto, sans-serif;
+  border-radius: 5px;
+  box-shadow: 2px 4px 7px #f0f0f0;
+}
+
+/* Reset style for HTML element on active to have no border*/
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+/* Style for Placeholder Text*/
+::placeholder {
+  /* Firefox, Chrome, Opera */
+  color: whitesmoke;
+  font-family: Roboto, sans-serif;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: whitesmoke;
+  font-family: Roboto, sans-serif;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: whitesmoke;
+  font-family: Roboto, sans-serif;
+}
+
+/*# sourceMappingURL=index.css.map */

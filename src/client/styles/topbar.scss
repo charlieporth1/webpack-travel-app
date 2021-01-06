@@ -1,17 +1,19 @@
+@import 'defaults/variables';
+@import "../fonts/font";
 .top-bar-top {
-    background-color: var(--primary-dark);
+    background-color: $primary-dark;
     height: 20px;
     padding-top: 10px;
-    min-width: 100%;
-    margin: -10px -10px 0 -10px;
+    min-width: 100vw;
+    //margin: -10px -10px 0 -10px;
     box-shadow: 2px 4px 100px #444;
 }
 .top-bar-second {
-    background-color: var(--primary);
+    background-color: $primary;
     /*background-color: #85c7ff;*/
     height: 60px;
-    min-width: 100%;
-    margin: -10px -10px 0 -10px;
+    min-width: 100vw;
+    //margin: -10px -10px 0 -10px;
     box-shadow: 2px 4px 25px #444;
     opacity:0.999
 }
@@ -26,7 +28,7 @@
     font-family: Roboto, sans-serif;
     text-align: right;
     padding-right: 10px;
-    color: var(--button-text-primary);
+    color: $button-text-primary;
     z-index: 99;
     font-size: 12px;
     margin-top: -2px;
