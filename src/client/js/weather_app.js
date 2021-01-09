@@ -4,37 +4,52 @@
 
 
 import {toggleLoader} from "./toggle_loading";
+import {getInputValue, kelvinToF} from "./utils";
+
+const SERVER = 'http://localhost:3000';
+
+function defaultFetchOpts() {
+    return {
+        mode: 'cors',
+        headers: {
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': SERVER,
+        },
+    }
+}
 
 function createWeatherClick() {
     const button = document.body.querySelector('#generate');
-    button.addEventListener("click", async function callback() {
+    button.addEventListener("click", async () => {
         await onSubmit();
     })
 }
 
 async function onSubmit() {
-    const zipcode = getInputValue("zip");
-
-
-    const jsonData = await getData(zipcode);
+    const place = getInputValue("zip");
+    const startDate = getInputValue("travel-start-date");
+    const endDate = getInputValue("travel-end-date");
+    const data = {
+        zipcode: place,
+        startDate: startDate,
+        endDate: endDate
+    };
+    const jsonData = await getData(data);
     modifyDom(jsonData)
 }
 
-async function getData(zipcode) {
-    const data = {
-        zipcode: zipcode.toString()
-    };
-    return await fetch('http://localhost:3000/get-current-weather-data', {
-        method: 'post',
+async function getData(data) {
+    return fetch(`${SERVER}/get-data`, {
+        method: 'POST',
         body: JSON.stringify(data),
         headers: {
-            'Content-Type': 'application/json'
+            ...defaultFetchOpts()
         }
     }).then((response) => {
         // The API call was successful!
         if (response.ok && response.status === 200) {
             console.log(response);
-            return response.json();
+            return Promise.resolve(response.json());
         } else {
             return Promise.reject(response);
         }
@@ -59,26 +74,5 @@ function modifyDom(data) {
 
 }
 
-function kelvinToF(tempInKelvin) {
-    // Prompting the user to enter today's Kelvin temperature
-    const kelvin = tempInKelvin;
 
-// Celsius is 273 degrees less than Kelvin
-    const celsius = kelvin - 273;
-
-// Calculating Fahrenheit temperature to the nearest integer
-    let fahrenheit = Math.floor(celsius * (9 / 5) + 32);
-    return fahrenheit;
-}
-
-function getInputValue(inputId) {
-    return String(window.document.getElementById(inputId.toString().trim()).value).trim();
-}
-
-window.modifyDom = modifyDom;
-window.kelvinToF = kelvinToF;
-window.getInputValue = getInputValue;
-window.getData = getData;
-window.onSubmit = onSubmit;
-
-export {createWeatherClick}
+export {createWeatherClick, modifyDom, getData, onSubmit, defaultFetchOpts}

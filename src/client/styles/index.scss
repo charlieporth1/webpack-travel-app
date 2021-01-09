@@ -6,7 +6,7 @@
     display: grid;
     grid-auto-rows: minmax(150px, auto);
     grid-template-columns: auto;
-    height: 110vh;
+    height: 200vh;
     background: $background-light;;
     /*Light*/
     color: $primary-light;
@@ -14,6 +14,12 @@
     grid-gap: 1em;
     font-size: 20px;
     font-family: Roboto, sans-serif;
+}
+.feel {
+
+}
+.zip {
+
 }
 
 #entryHolder {

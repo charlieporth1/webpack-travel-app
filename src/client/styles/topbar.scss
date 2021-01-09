@@ -5,15 +5,13 @@
     height: 20px;
     padding-top: 10px;
     min-width: 100vw;
-    //margin: -10px -10px 0 -10px;
     box-shadow: 2px 4px 100px #444;
 }
 .top-bar-second {
     background-color: $primary;
-    /*background-color: #85c7ff;*/
     height: 60px;
     min-width: 100vw;
-    //margin: -10px -10px 0 -10px;
+    margin-top: -100px;
     box-shadow: 2px 4px 25px #444;
     opacity:0.999
 }

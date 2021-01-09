@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Weather Journal</title>
-    <meta name="description" content="Simple CTP Development weather app">
+    <meta name="description" content="CTP Development Travel app">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' https://* https//* 'unsafe-inline'; script-src 'self' https://* http://* 'unsafe-inline' 'unsafe-eval';" />
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src *; style-src 'self' https://* https//* 'unsafe-inline'; script-src 'self' https://* http://* 'unsafe-inline' 'unsafe-eval';"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
@@ -16,20 +17,33 @@
 </div>
 <div class="top-bar-second">
     <div class="holder headline">
-        Weather Journal App
+        Travel App
     </div>
 </div>
 <div id="app">
     <div class="holder zip">
-        <label class="default-element-spacing" for="zip">Enter Zipcode here</label>
-        <input class="root-styles-for-elements m-design default-element-spacing" type="text" id="zip" placeholder="Enter zip code here">
+        <label class="default-element-spacing" for="country">Enter country</label>
+        <input class="root-styles-for-elements m-design default-element-spacing" type="text" id="country"
+               placeholder="Enter place to go country"/>
+
+        <label class="default-element-spacing" for="zip">Enter zipcode</label>
+        <input class="root-styles-for-elements m-design default-element-spacing" type="text" id="zip"
+               placeholder="Enter place to go zipcode"/>
     </div>
+    <div class="holder zip">
+        <label class="default-element-spacing" for="travel-start-date">Travel start date</label>
+        <input class="root-styles-for-elements m-design default-element-spacing" type="date" id="travel-start-date"
+               placeholder="Select travel start date"/>
+    </div>
+
     <div class="holder feel">
-        <label class="default-element-spacing" for="feelings">How are you feeling today?</label>
+        <label class="default-element-spacing" for="travel-end-date">Travel end date</label>
         <div style="flex: 1; flex-direction: row;">
-            <textarea class="myInput root-styles-for-elements m-design default-element-spacing" id="feelings" placeholder="Enter your feelings here"
-                      rows="9" cols="50"></textarea>
-            <button class="m-design default-element-spacing" id="generate" onclick="toggleLoader()" type="submit">Generate</button>
+            <input class="root-styles-for-elements m-design default-element-spacing" type="date" id="travel-end-date"
+                   placeholder="Select travel end date"/>
+            <button class="m-design default-element-spacing" id="generate" onclick="toggleLoader()" type="submit">
+                Generate
+            </button>
         </div>
     </div>
     <div style="display: none" class="loader"></div>

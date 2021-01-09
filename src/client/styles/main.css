@@ -75,6 +75,7 @@ a {
 
 .m-design {
   box-shadow: 2px 4px 7px #444;
+  border-radius: 10px;
 }
 
 .holder {
