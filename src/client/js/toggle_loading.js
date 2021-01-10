@@ -1,3 +1,5 @@
+import {onSubmit} from "./weather_app";
+
 function toggleLoader() {
     const loaderElement = document.body.getElementsByClassName("loader")[0];
     const isHidden = loaderElement.style.display.toString().includes("none");
@@ -5,11 +7,10 @@ function toggleLoader() {
     loaderElement.style.display = toggleStr;
     const button = document.body.querySelector('#generate');
     if (!isHidden) {
-        button.removeEventListener("click", () => {
-        });
+        button.removeEventListener("click", () =>{});
         button.style.backgroundColor = 'rgba(131,131,131,0.88)';
     } else {
-        button.addEventListener("click", async function callback() {
+        button.addEventListener("click", async () => {
             await onSubmit();
         });
         button.style.backgroundColor = '#006acb';

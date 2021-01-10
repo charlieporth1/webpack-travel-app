@@ -13,7 +13,7 @@ const generateWeatherURL = (q) => {
 };
 
 const generateGeoZipUrl = (zipcode, country = 'USA') => {
-    return `${BASE_GEO_URL}/postalCodeLookupJSON?postalcode=${zipcode}&country=${country}&callback=getLocation&username=${GEO_USERNAME}`;
+    return `${BASE_GEO_URL}/postalCodeLookupJSON?postalcode=${zipcode}&country=${country}&username=${GEO_USERNAME}`;
 };
 
 

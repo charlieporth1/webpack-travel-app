@@ -5,6 +5,7 @@
 
 import {toggleLoader} from "./toggle_loading";
 import {getInputValue, kelvinToF} from "./utils";
+import {generateHTML} from "./result_handler";
 
 const SERVER = 'http://localhost:3000';
 
@@ -18,6 +19,8 @@ function defaultFetchOpts() {
     }
 }
 
+// 'Access-Control-Allow-Methods': 'POST',
+//     'Access-Control-Allow-Origin': SERVER,
 function createWeatherClick() {
     const button = document.body.querySelector('#generate');
     button.addEventListener("click", async () => {
@@ -39,37 +42,42 @@ async function onSubmit() {
 }
 
 async function getData(data) {
-    return fetch(`${SERVER}/get-data`, {
-        method: 'POST',
-        body: JSON.stringify(data),
-        headers: {
+    data = {
+        zipcode: data.zipcode,
+        startDate: data.startDate,
+        endDate: data.endDate
+    };
+    return await new Promise(resolve => {
+        fetch(`${SERVER}/get-data`, {
+            method: 'POST',
+            body: JSON.stringify(data),
             ...defaultFetchOpts()
-        }
-    }).then((response) => {
-        // The API call was successful!
-        if (response.ok && response.status === 200) {
-            console.log(response);
-            return Promise.resolve(response.json());
-        } else {
-            return Promise.reject(response);
-        }
-    }).catch((err) => {
-        // There was an error
-        console.warn('Something went wrong.', err);
-        return Promise.reject(err);
-    });
+        }).then(async res => await res.json())
+            .then((json) => {
+                // The API call was successful!
+                console.log(json);
+                return resolve(json);
+            })
+    })
+    // .catch((err) => {
+    // console.error("Promise error ", err);
+    // return Promise.reject(err)
+    // })
+
+    // .catch((err) => {
+    // There was an error
+    // console.warn('Something went wrong.', err);
+    // return Promise.reject(err);
+    // });
 }
 
 function modifyDom(data) {
     const dateDiv = document.getElementById("date");
     const tempDiv = document.getElementById("temp");
-    const contentDiv = document.getElementById("content");
-    const feelings = getInputValue("feelings");
 
     dateDiv.innerHTML = data.date + " last updated";
-    tempDiv.innerText = kelvinToF(parseFloat(data.temp)).toFixed(1) + "°F";
-    contentDiv.innerHTML = feelings;
-
+    tempDiv.innerText = kelvinToF(parseFloat(data.weather.main.temp)).toFixed(1) + "°F";
+    document.getElementById('results').innerHTML = generateHTML(data);
     toggleLoader();
 
 }

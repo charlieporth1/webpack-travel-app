@@ -12,7 +12,7 @@ function getInputValue(inputId) {
 
 const dateFormat = (addDays = 0) => {
     const dd = new Date();
-    return `${dd.getMonth()}/${dd.getDay() + addDays}/${dd.getFullYear()}`.toLocaleString()
+    return `${dd.getMonth()}/${dd.getDay() + addDays}/${dd.getFullYear()}`.toLocaleString();
 };
 
 const kelvinToF = (tempInKelvin) => {
