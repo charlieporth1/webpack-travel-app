@@ -1,5 +1,5 @@
 {
-  "name": "weather-journal-app",
+  "name": "travel-app",
   "version": "1.0.0",
   "dependencies": {
     "axios": "^0.21.0",
