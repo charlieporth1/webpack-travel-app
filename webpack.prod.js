@@ -35,15 +35,23 @@ module.exports = {
                 }
             },
             {
-                test: /\.css$/i,
+                test: /\.(s?css)/i,
                 exclude: /node_modules/,
-                use: ["style-loader", {
-                    loader: 'styles-loader',
-                    options: {
-                        url: true,
-                        import: true,
+                use: ["style-loader",
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            url: true,
+                            import: true,
+                            sourceMap: true,
+                        },
+                    }, {
+                        loader: 'sass-loader',
+                        options: {
+                            sourceMap: true,
+                        }
                     }
-                }],
+                ],
             },
             {
                 test: /\.link\.css$/i,
@@ -72,9 +80,12 @@ module.exports = {
                 test: /\.(ttf|woff|woff2)$/i,
                 exclude: /node_modules/,
                 use: [
-                    {
-                        loader: 'file-loader',
-                    }
+                    'file-loader',{
+                        loader: 'ttf-loader',
+                        options: {
+                            name: './src/client/fonts/Roboto/[name].[ext]',
+                        },
+                    },
                 ],
             },
         ]
