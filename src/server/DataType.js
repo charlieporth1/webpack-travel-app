@@ -11,9 +11,9 @@ class ProjectData {
             this.location = new Location(locationData);
         }
     }
-    refreshDate = () => {
+    refreshDate() {
         this.date = moment.format("MM.DD.YYYY HH:mm");
-    };
+    }
 }
 
 class Weather {
