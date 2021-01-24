@@ -33,20 +33,20 @@ class Weather {
         }
     }
 
-    coor = (data) => {
+    coor (data)  {
         this.coord = {
             lon: data.lon || '',
             lat: data.lat || '',
         };
-    };
-    stat = (data) => {
+    }
+    stat (data)  {
         this.status = {
             main: data.main || 'Haze',
             description: data.description || 'haze',
             icon: data.icon || '50d',
         };
     };
-    mai = (data) => {
+    mai (data) {
         this.main = {
             temp: data.temp || '',
             humidity: data.humidity || '',
@@ -56,13 +56,13 @@ class Weather {
             pressure: data.pressure || '',
         };
     };
-    win = (data) => {
+    win  (data) {
         this.wind = {
             speed: data.speed || '',
             deg: data.deg || '',
         };
     };
-    sy = (data) => {
+    sy  (data) {
         this.sys = {
             sunrise: data.sunrise || '1610113830',
             sunset: data.sunset || '1610146186',
