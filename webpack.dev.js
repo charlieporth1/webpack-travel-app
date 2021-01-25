@@ -3,22 +3,11 @@ const webpack = require('webpack');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const nodeExternals = require('webpack-node-externals');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
-require('dotenv').config();
-const {BACKEND_PORT = 3000, FRONT_END_PORT = 8080, HOST = 'localhost'} = process.env;
 const WorkboxPlugin = require('workbox-webpack-plugin');
 module.exports = {
     entry: './src/client/index.js',
     mode: 'development',
     devtool: 'source-map',
-    devServer: {
-        port: FRONT_END_PORT,
-        disableHostCheck: true,
-        compress: true,
-        host: HOST,
-        proxy: {
-            "/api": `http://${HOST}:${BACKEND_PORT}`
-        }
-    },
     stats: 'verbose',
     target: 'node',
     output: {
