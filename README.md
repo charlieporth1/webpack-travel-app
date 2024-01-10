@@ -1,5 +1,6 @@
 # Travel App Project
 Look at the package.json and start the backend and frontend separately
+Udactiy NanoDegree Intro to JavaScript & Web development project
 
 # Install and setup
 `npm install || yarn install`  
